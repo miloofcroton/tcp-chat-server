@@ -1,0 +1,27 @@
+{
+  "name": "tcp-chat-server",
+  "version": "1.0.0",
+  "description": "TCP Chat Server",
+  "main": "server.js",
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test:run": "jest",
+    "test": "npm run test:run",
+    "start": "npm run test:run -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miloofcroton/tcp-chat-server.git"
+  },
+  "author": "Jack Toumey <jack@toumey.io>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miloofcroton/tcp-chat-server/issues"
+  },
+  "homepage": "https://github.com/miloofcroton/tcp-chat-server#readme",
+  "devDependencies": {
+    "eslint": "^5.6.0",
+    "jest": "^23.6.0"
+  }
+}
