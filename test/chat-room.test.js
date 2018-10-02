@@ -57,7 +57,7 @@ describe('chatroom tests', () => {
                 return acc;
             }, usernames);
             assert.equal(clients.length, 3);
-            assert.deepEqual(clients, 3);
+            assert.deepEqual([...usernames], ['user1', 'user2', 'user3']);
         });
     });
 });
