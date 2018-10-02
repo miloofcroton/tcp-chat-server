@@ -23,9 +23,12 @@ describe('chatroom tests', () => {
     });
 
     it('gets the client you add', () => {
-        console.log(chatroom);
         let chosenClient = chatroom.getClient('user1');
         assert.ok(chosenClient);
+    });
+
+    it('the rename function exists', () => {
+        assert.ok(chatroom.rename);
     });
 
 });
