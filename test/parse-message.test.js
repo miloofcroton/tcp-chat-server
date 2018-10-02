@@ -20,6 +20,19 @@ describe('parseMessage tests', () => {
         assert.deepEqual(response, expected);
     });
 
+    it('removes newlines and carriage returns in message content', () => {
+
+        let response = parseMessage('@dm:brosef cool message\r\n');
+        let expected = {
+            command: 'dm',
+            arg: 'brosef',
+            text: 'cool message'
+        };
+        assert.deepEqual(response, expected);
+
+
+    });
+
 
 });
 
