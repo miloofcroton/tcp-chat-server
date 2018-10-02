@@ -46,4 +46,18 @@ describe('chatroom tests', () => {
         });
     });
 
+    describe('all() function tests', () => {
+
+        it('returns an array of all clients', () => {
+
+            const clients = chatroom.all();
+            const usernames = new Set();
+            clients.reduce((acc, curr) => {
+                acc.add(curr.username);
+                return acc;
+            }, usernames);
+            assert.equal(clients.length, 3);
+            assert.deepEqual(clients, 3);
+        });
+    });
 });
