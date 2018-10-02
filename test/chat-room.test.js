@@ -33,6 +33,7 @@ describe('chatroom tests', () => {
     it('getting the old username does not work after a rename', () => {
         
         chatroom.rename('user1', 'banana');
+        assert.ok(chatroom.getClient('banana'));
         assert.ok(!chatroom.getClient('user1'));
     });
 
