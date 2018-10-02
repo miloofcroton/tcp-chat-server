@@ -7,6 +7,7 @@ describe('chatroom tests', () => {
     const c1 = {}, 
         c2 = {},
         c3 = {};
+    let chatroom = null;
 
     beforeEach(() => {
         chatroom = new ChatRoom();
@@ -22,7 +23,8 @@ describe('chatroom tests', () => {
     });
 
     it('gets the client you add', () => {
-        let chosenClient = getClient('user1');
+        console.log(chatroom);
+        let chosenClient = chatroom.getClient('user1');
         assert.ok(chosenClient);
     });
 
