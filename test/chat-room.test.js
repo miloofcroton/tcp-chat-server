@@ -30,7 +30,6 @@ describe('chatroom tests', () => {
         it('the rename function exists', () => {
             assert.ok(chatroom.rename);
         });
-    
         it('getting the old username does not work after a rename', () => {
             chatroom.rename('user1', 'banana');    
             assert.ok(!chatroom.getClient('user1'));
@@ -41,9 +40,8 @@ describe('chatroom tests', () => {
             assert.ok(testUser);
         });
         it('the new client has the proper username key and username property', () => {
-            chatroom.rename('user1', 'banana');    
+            chatroom.rename('user1', 'banana');
             const testUser = chatroom.getClient('banana');
-            assert.ok(testUser);
             assert.equal(testUser.username, 'banana');
         });
     });
