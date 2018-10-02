@@ -16,7 +16,7 @@ describe('chatroom tests', () => {
         chatroom.add(c3);
     });
 
-    describe('add(client) tests', () => {
+    describe('add functionality', () => {
         
         it('assigns names', () => {
             assert.equal(c1.username, 'user1');
@@ -25,7 +25,17 @@ describe('chatroom tests', () => {
         });
     });
 
-    describe('getClient tests', () => {
+    describe('delete functionality', () => {
+        
+        it('assigns names', () => {
+            chatroom.remove('user1');
+            chatroom.remove('user3');
+            const remaining = chatroom.all();
+            assert.equal(remaining.length, 1);
+        });
+    });
+
+    describe('read functionality', () => {
 
         it('gets the client you add', () => {
             assert.ok(chatroom.getClient('user1'));
@@ -43,12 +53,12 @@ describe('chatroom tests', () => {
         });
         it('getting the new username does work after a rename', () => {
             chatroom.rename('user1', 'banana');    
-            const testUser = chatroom.getClient('banana');
+            let testUser = chatroom.getClient('banana');
             assert.ok(testUser);
         });
         it('the new client has the proper username key and username property', () => {
             chatroom.rename('user1', 'banana');
-            const testUser = chatroom.getClient('banana');
+            let testUser = chatroom.getClient('banana');
             assert.equal(testUser.username, 'banana');
         });
     });
@@ -57,8 +67,8 @@ describe('chatroom tests', () => {
 
         it('returns an array of all clients', () => {
 
-            const clients = chatroom.all();
-            const usernames = new Set();
+            let clients = chatroom.all();
+            let usernames = new Set();
             clients.reduce((acc, curr) => {
                 acc.add(curr.username);
                 return acc;
